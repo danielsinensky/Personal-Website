@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# AI coding agent tooling (local only, not part of the site)
+.claude/
+AGENTS.md
+CLAUDE.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
