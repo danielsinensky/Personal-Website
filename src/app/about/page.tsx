@@ -9,50 +9,82 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <Container className="py-16">
-      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-        <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-accent text-2xl font-semibold text-accent-foreground">
-          DS
+      <div className="max-w-xl">
+        <div className="flex items-start gap-6">
+          <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-border text-lg text-muted">
+            DS
+          </div>
+          <div className="space-y-4 text-sm leading-relaxed text-muted">
+            <p>
+              Hi, I&apos;m Daniel Sinensky — a software engineer with a
+              cybersecurity background. I build web and mobile products
+              end-to-end, and I approach all of it through a security-first
+              lens.
+            </p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-3xl font-semibold">Daniel Sinensky</h1>
-          <p className="mt-1 text-muted">Web and Mobile Design. Secure.</p>
+
+        <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted">
+          <p>
+            I hold an M.S. in Cybersecurity from the Katz School of Science
+            and Health at Yeshiva University, where I served as Vice
+            President of the ISACA Student Group — part of the ISACA New
+            York Metropolitan Chapter, and one of the most active student
+            groups in the city. I&apos;m CompTIA Security+ certified, hold
+            ISC2&apos;s Certified in Cybersecurity (CC) credential, and the
+            Cloud Security Alliance&apos;s Certificate of Cloud Security
+            Knowledge (CCSK). My hands-on training includes SOC analysis
+            through Cyberbit&apos;s Yeshiva University SOC Lab Program and
+            Google&apos;s Cybersecurity certificate coursework — covering
+            networks, Linux and SQL, and incident detection and response.
+          </p>
+          <p>
+            On the builder side, my current project — Job Application Agent
+            — is an AI agent that searches for jobs a user is eligible for
+            and emails them the matches. It combines a Python web scraper,
+            AWS Lambda, SQLite, and third-party APIs on the backend with
+            Next.js, Kotlin, and Swift clients across web, Android, and iOS.
+          </p>
+          <p>
+            This site is where I collect that work — personal projects,
+            client projects, and everything else I build or make.
+          </p>
         </div>
-      </div>
 
-      <div className="mt-10 max-w-2xl space-y-4 text-sm leading-relaxed text-muted">
-        <p>
-          I design and build web and mobile products end-to-end — from
-          backend services and cloud infrastructure to native iOS and Android
-          clients.
-        </p>
-        <p>
-          My current project, Job Application Agent, is an AI agent that
-          searches for jobs a user is eligible for and emails them the
-          matches. It combines a Python web scraper, AWS Lambda, SQLite, and
-          third-party APIs on the backend with Next.js, Kotlin, and Swift
-          clients across web, Android, and iOS.
-        </p>
-        <p>
-          This site is where I collect that work — personal projects,
-          client projects, and everything else I build or make.
-        </p>
-      </div>
+        <div className="mt-10 border-t border-border pt-6">
+          <h2 className="text-sm text-muted">Skills</h2>
+          <p className="mt-3 text-sm leading-relaxed">
+            Cybersecurity — CompTIA Security+ / ISC2 Certified in
+            Cybersecurity / CSA CCSK / SOC Analysis / Network Security
+          </p>
+          <p className="mt-1 text-sm leading-relaxed">
+            Development — Python / Next.js / React / Kotlin / Swift / AWS
+            Lambda / SQL
+          </p>
+        </div>
 
-      <div className="mt-10">
-        <h2 className="text-sm font-medium text-muted">Find me elsewhere</h2>
-        <div className="mt-3 flex flex-wrap gap-4">
-          {socialLinks.map(({ name, url, Icon }) => (
-            <a
-              key={name}
-              href={url}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-medium hover:border-accent hover:text-accent"
-            >
-              <Icon size={16} />
-              {name}
+        <div className="mt-10 border-t border-border pt-6">
+          <h2 className="text-sm text-muted">Contact</h2>
+          <p className="mt-3 text-sm">
+            Email:{" "}
+            <a href="mailto:danielsinensky@gmail.com" className="hover:underline">
+              danielsinensky@gmail.com
             </a>
-          ))}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-4">
+            {socialLinks.map(({ name, url, Icon }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-muted hover:text-foreground"
+              >
+                <Icon size={16} />
+                {name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Container>

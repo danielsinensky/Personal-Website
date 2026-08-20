@@ -8,7 +8,7 @@ const LABELS: Record<Platform, string> = {
 
 export default function PlatformBadge({ platform }: { platform: Platform }) {
   return (
-    <span className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted">
+    <span className="border border-border px-2 py-0.5 text-xs text-muted">
       {LABELS[platform]}
     </span>
   );

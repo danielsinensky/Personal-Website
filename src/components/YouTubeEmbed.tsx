@@ -2,8 +2,8 @@ import type { Video } from "@/content/videos";
 
 export default function YouTubeEmbed({ video }: { video: Video }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface">
-      <div className="aspect-video">
+    <div>
+      <div className="aspect-video overflow-hidden">
         <iframe
           className="h-full w-full"
           src={`https://www.youtube.com/embed/${video.id}`}
@@ -12,7 +12,7 @@ export default function YouTubeEmbed({ video }: { video: Video }) {
           allowFullScreen
         />
       </div>
-      <p className="px-4 py-3 text-sm font-medium">{video.title}</p>
+      <p className="mt-3 text-sm text-muted">{video.title}</p>
     </div>
   );
 }

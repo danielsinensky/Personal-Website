@@ -36,11 +36,11 @@ export default function EmailSignupForm({
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="you@example.com"
-        className="min-w-0 flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus:border-accent"
+        className="min-w-0 flex-1 border-b border-border bg-transparent px-1 py-1.5 text-sm outline-none focus:border-foreground"
       />
       <button
         type="submit"
-        className="shrink-0 rounded-md bg-accent px-3 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+        className="shrink-0 border-b border-foreground px-1 py-1.5 text-sm hover:opacity-70"
       >
         Subscribe
       </button>

@@ -19,7 +19,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={name}
-                className="text-muted transition-colors hover:text-accent"
+                className="text-muted transition-colors hover:text-foreground"
               >
                 <Icon size={18} />
               </a>

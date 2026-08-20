@@ -12,17 +12,17 @@ export default function BlogIndexPage() {
 
   return (
     <Container className="py-16">
-      <h1 className="text-3xl font-semibold">Blog</h1>
+      <h1 className="text-2xl font-medium">Blog</h1>
 
-      <div className="mt-8 flex flex-col gap-4">
+      <div className="mt-8 flex flex-col">
         {posts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="block rounded-xl border border-border bg-surface p-6 hover:border-accent"
+            className="block border-b border-border py-6 first:pt-0 hover:underline"
           >
             <p className="text-xs text-muted">{post.date}</p>
-            <h2 className="mt-1 text-lg font-semibold">{post.title}</h2>
+            <h2 className="mt-1 text-lg font-medium">{post.title}</h2>
             <p className="mt-2 text-sm text-muted">{post.excerpt}</p>
           </Link>
         ))}

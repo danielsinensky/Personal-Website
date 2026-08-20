@@ -10,20 +10,20 @@ export const metadata: Metadata = {
 export default function VideosPage() {
   return (
     <Container className="py-16">
-      <h1 className="text-3xl font-semibold">Videos</h1>
+      <h1 className="text-2xl font-medium">Videos</h1>
       <p className="mt-2 max-w-xl text-sm text-muted">
         Videos from my YouTube channel.
       </p>
 
       {videos.length > 0 ? (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-8 sm:grid-cols-2">
           {videos.map((video) => (
             <YouTubeEmbed key={video.id} video={video} />
           ))}
         </div>
       ) : (
-        <div className="mt-8 rounded-xl border border-dashed border-border bg-surface px-6 py-16 text-center">
-          <h2 className="text-lg font-semibold">No videos embedded yet</h2>
+        <div className="mt-8 border-t border-border py-16 text-center">
+          <h2 className="text-lg font-medium">No videos embedded yet</h2>
           <p className="mx-auto mt-2 max-w-md text-sm text-muted">
             Videos will show up here as they&apos;re published. In the
             meantime, catch them on YouTube directly.
@@ -32,7 +32,7 @@ export default function VideosPage() {
             href={youtubeChannelUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block rounded-md border border-border px-4 py-2 text-sm font-medium hover:border-accent hover:text-accent"
+            className="mt-4 inline-block text-sm hover:underline"
           >
             Visit the channel →
           </a>

@@ -31,7 +31,7 @@ export default async function BlogPostPage({
     <Container className="py-16">
       <article className="max-w-2xl">
         <p className="text-xs text-muted">{post.meta.date}</p>
-        <h1 className="mt-1 text-3xl font-semibold">{post.meta.title}</h1>
+        <h1 className="mt-1 text-2xl font-medium">{post.meta.title}</h1>
         <div className="mt-6 text-sm leading-relaxed text-muted [&_p]:mb-4 [&_strong]:text-foreground">
           <MDXRemote source={post.content} />
         </div>

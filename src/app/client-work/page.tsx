@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ClientWorkPage() {
   return (
     <Container className="py-16">
-      <h1 className="text-3xl font-semibold">Client Work</h1>
+      <h1 className="text-2xl font-medium">Client Work</h1>
       <p className="mt-2 max-w-xl text-sm text-muted">
         A selection of projects built for business clients.
       </p>
