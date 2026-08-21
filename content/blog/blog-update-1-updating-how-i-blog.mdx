@@ -1,0 +1,13 @@
+---
+title: "Blog Update 1: Updating How I Blog"
+date: "2026-08-21"
+excerpt: "How this blog now publishes new posts straight from the site, with no local git commands required."
+---
+
+Up until now, publishing meant opening the repo locally, writing a Markdown file by hand, and pushing it. Fine on occasion, annoying as a practice.
+
+So I added a small admin panel. It's not a CMS because there's no database, or post editor with a preview pane. It's a single form with inputs for a title, an excerpt, the date, and a body field for Markdown. On submission, it writes a properly formatted post file and commits it directly to this site's GitHub repo, the same way I would by hand. That commit triggers the normal deploy, and the post is live within about a minute.
+
+The part I actually cared about was access control. The panel sits behind GitHub sign-in, and the code checks that the account signing in is *specifically* mine, not just "anyone with a GitHub account" or a shared password sitting in an environment variable somewhere. If someone else tried to sign in, they'd get denied before ever seeing the form.
+
+It's a small feature, but it removes the one bit of friction that was making me not write. Next, I will update it to include the ability to edit and preview blog posts.
