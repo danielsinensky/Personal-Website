@@ -67,8 +67,8 @@ export default function AboutPage() {
           <h2 className="text-sm text-muted">Contact</h2>
           <p className="mt-3 text-sm">
             Email:{" "}
-            <a href="mailto:danielsinensky@gmail.com" className="hover:underline">
-              danielsinensky@gmail.com
+            <a href="mailto:danielsinensky@danielsinensky.com" className="hover:underline">
+              danielsinensky@danielsinensky.com
             </a>
           </p>
           <div className="mt-3 flex flex-wrap gap-4">
