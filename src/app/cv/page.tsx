@@ -28,7 +28,7 @@ export default function CVPage() {
           <h1 className="text-2xl font-medium">Daniel Sinensky</h1>
           <p className="mt-1 text-muted">Web and Mobile Design. Secure.</p>
           <p className="mt-2 text-sm text-muted">
-            {"danielsinensky@danielsinensky.com"}
+            {"danielsinensky@gmail.com"}
             {socialLinks.map(({ name, url }) => (
               <span key={name}>
                 {" · "}
