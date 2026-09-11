@@ -8,12 +8,15 @@ export const metadata: Metadata = {
   title: "CV — Daniel Sinensky",
 };
 
-const SKILLS = [
+const CERTIFICATIONS = [
   "CompTIA Security+",
   "ISC2 Certified in Cybersecurity",
   "CSA CCSK",
-  "SOC Analysis",
-  "Network Security",
+];
+
+const CYBERSECURITY_SKILLS = ["SOC Analysis", "Network Security"];
+
+const SOFTWARE_ENGINEERING_SKILLS = [
   "Python",
   "SQL",
   "SQLite",
@@ -45,7 +48,15 @@ export default function CVPage() {
 
       <section className="mt-10 border-t border-border pt-6">
         <h2 className="text-sm text-muted">Skills</h2>
-        <p className="mt-3 text-sm leading-relaxed">{SKILLS.join(" / ")}</p>
+        <p className="mt-3 text-sm leading-relaxed">
+          Certifications — {CERTIFICATIONS.join(" / ")}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed">
+          Cybersecurity — {CYBERSECURITY_SKILLS.join(" / ")}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed">
+          Software Engineering — {SOFTWARE_ENGINEERING_SKILLS.join(" / ")}
+        </p>
       </section>
 
       <section className="mt-10 border-t border-border pt-6">
