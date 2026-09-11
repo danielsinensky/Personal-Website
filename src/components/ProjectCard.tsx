@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/content/projects";
 import PlatformBadge from "@/components/PlatformBadge";
+import TechTag from "@/components/TechTag";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -16,15 +17,13 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
       <p className="mt-2 text-sm text-muted">{project.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        {project.platforms.map((platform) => (
-          <PlatformBadge key={platform} platform={platform} />
+        {project.tech.map((tech) => (
+          <TechTag key={tech} tech={tech} />
         ))}
       </div>
-      <div className="mt-3 flex flex-wrap gap-3">
-        {project.tech.map((tech) => (
-          <span key={tech} className="text-xs text-muted">
-            {tech}
-          </span>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {project.platforms.map((platform) => (
+          <PlatformBadge key={platform} platform={platform} />
         ))}
       </div>
     </Link>

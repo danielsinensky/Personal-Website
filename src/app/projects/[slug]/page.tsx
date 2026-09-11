@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import PlatformBadge from "@/components/PlatformBadge";
+import TechTag from "@/components/TechTag";
 import { getProjectBySlug, projects } from "@/content/projects";
 
 export function generateStaticParams() {
@@ -33,8 +34,8 @@ export default async function ProjectPage({
       <h1 className="mt-1 text-2xl font-medium">{project.title}</h1>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {project.platforms.map((platform) => (
-          <PlatformBadge key={platform} platform={platform} />
+        {project.tech.map((tech) => (
+          <TechTag key={tech} tech={tech} />
         ))}
       </div>
 
@@ -43,12 +44,10 @@ export default async function ProjectPage({
       </p>
 
       <div className="mt-8">
-        <h2 className="text-sm text-muted">Built with</h2>
+        <h2 className="text-sm text-muted">Platform</h2>
         <div className="mt-2 flex flex-wrap gap-3">
-          {project.tech.map((tech) => (
-            <span key={tech} className="text-xs text-muted">
-              {tech}
-            </span>
+          {project.platforms.map((platform) => (
+            <PlatformBadge key={platform} platform={platform} />
           ))}
         </div>
       </div>

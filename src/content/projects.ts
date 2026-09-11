@@ -21,7 +21,7 @@ export const projects: Project[] = [
       "Threat Intelligence Log Analyzer generates simulated enterprise authentication and network event logs with attack patterns deliberately injected — brute-force attempts, privilege escalation, lateral movement, and after-hours access. Four SQL detection rules (using GROUP BY, HAVING, and aggregation) run against the log data, persist structured findings to a SQLite database, and produce a severity-ranked threat report covering total findings, severity distribution, top flagged users, and critical alerts.",
     platforms: ["cli"],
     tech: ["Python", "SQL", "SQLite", "Threat Detection", "Log Analysis"],
-    status: "Complete",
+    status: "In Progress",
     links: [
       {
         label: "View on GitHub",
