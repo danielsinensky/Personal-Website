@@ -9,15 +9,16 @@ export const metadata: Metadata = {
 };
 
 const SKILLS = [
+  "CompTIA Security+",
+  "ISC2 Certified in Cybersecurity",
+  "CSA CCSK",
+  "SOC Analysis",
+  "Network Security",
   "Python",
-  "Web Scraping",
-  "AWS Lambda",
+  "SQL",
   "SQLite",
-  "AI Agents",
-  "APIs",
   "Next.js",
-  "Kotlin",
-  "Swift",
+  "TypeScript",
 ];
 
 export default function CVPage() {

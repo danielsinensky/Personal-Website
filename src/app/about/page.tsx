@@ -39,11 +39,13 @@ export default function AboutPage() {
             networks, Linux and SQL, and incident detection and response.
           </p>
           <p>
-            On the builder side, my current project — Job Application Agent
-            — is an AI agent that searches for jobs a user is eligible for
-            and emails them the matches. It combines a Python web scraper,
-            AWS Lambda, SQLite, and third-party APIs on the backend with
-            Next.js, Kotlin, and Swift clients across web, Android, and iOS.
+            On the builder side, my current project — Threat Intelligence Log
+            Analyzer — is a Python and SQL tool that generates simulated
+            enterprise log data, runs SQL-driven detection rules for things
+            like brute-force attempts, privilege escalation, and lateral
+            movement, and outputs a severity-ranked threat report. It&apos;s
+            the SOC and detection work from my cybersecurity training, built
+            as code.
           </p>
           <p>
             This site is where I collect that work — personal projects,
@@ -58,8 +60,7 @@ export default function AboutPage() {
             Cybersecurity / CSA CCSK / SOC Analysis / Network Security
           </p>
           <p className="mt-1 text-sm leading-relaxed">
-            Development — Python / Next.js / React / Kotlin / Swift / AWS
-            Lambda / SQL
+            Development — Python / SQL / SQLite / Next.js / TypeScript
           </p>
         </div>
 
