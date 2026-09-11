@@ -43,14 +43,16 @@ export default async function ProjectPage({
         {project.description}
       </p>
 
-      <div className="mt-8">
-        <h2 className="text-sm text-muted">Platform</h2>
-        <div className="mt-2 flex flex-wrap gap-3">
-          {project.platforms.map((platform) => (
-            <PlatformBadge key={platform} platform={platform} />
-          ))}
+      {project.platforms.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-sm text-muted">Platform</h2>
+          <div className="mt-2 flex flex-wrap gap-3">
+            {project.platforms.map((platform) => (
+              <PlatformBadge key={platform} platform={platform} />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {project.links && project.links.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-4">
