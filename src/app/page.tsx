@@ -14,11 +14,12 @@ export default function Home() {
       <section>
         <h1 className="text-3xl font-medium">Daniel Sinensky</h1>
         <p className="mt-4 max-w-xl text-muted">
-          I build web and mobile products end-to-end, backed by a
-          cybersecurity background — an M.S. in Cybersecurity from Yeshiva
-          University&apos;s Katz School, CompTIA Security+, and ISC2&apos;s
-          Certified in Cybersecurity credential. Below is what I&apos;m
-          currently building, recent writing, and where else to find me.
+          A cybersecurity professional with hands-on GRC, risk, and
+          incident-response experience — and an outreach track record
+          that&apos;s booked CISOs as speakers and built a 100+ client
+          business from scratch. I also build the security tooling and
+          software behind that work. Below is what I&apos;m currently
+          building, recent writing, and where else to find me.
         </p>
       </section>
 

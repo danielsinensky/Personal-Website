@@ -11,7 +11,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Daniel Sinensky",
-  description: "Web and Mobile Design. Secure.",
+  description: "Cybersecurity Professional. Hands-On Builder.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
