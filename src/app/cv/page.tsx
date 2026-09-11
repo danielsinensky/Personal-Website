@@ -14,7 +14,15 @@ const CERTIFICATIONS = [
   "CSA CCSK",
 ];
 
-const CYBERSECURITY_SKILLS = ["SOC Analysis", "Network Security"];
+const CYBERSECURITY_SKILLS = [
+  "SOC Analysis",
+  "Network Security",
+  "Incident Response",
+  "IAM",
+  "Risk Analysis",
+  "GRC (NIST, SOC 2, ISO 27001, HIPAA)",
+  "Splunk Log Analysis",
+];
 
 const SOFTWARE_ENGINEERING_SKILLS = [
   "Python",
@@ -30,7 +38,9 @@ export default function CVPage() {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-medium">Daniel Sinensky</h1>
-          <p className="mt-1 text-muted">Web and Mobile Design. Secure.</p>
+          <p className="mt-1 text-muted">
+            Cybersecurity Professional. Hands-On Builder.
+          </p>
           <p className="mt-2 text-sm text-muted">
             {"danielsinensky@danielsinensky.com"}
             {socialLinks.map(({ name, url }) => (
