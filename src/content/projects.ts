@@ -1,4 +1,4 @@
-export type Platform = "web" | "android" | "ios";
+export type Platform = "web" | "android" | "ios" | "cli";
 
 export interface Project {
   slug: string;
@@ -13,25 +13,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "job-application-agent",
-    title: "Job Application Agent",
+    slug: "threat-log-analyzer",
+    title: "Threat Intelligence Log Analyzer",
     summary:
-      "An AI agent that finds jobs you're eligible for and delivers them straight to your inbox.",
+      "A Python and SQL tool that detects indicators of compromise in simulated enterprise logs and outputs a severity-ranked threat report.",
     description:
-      "Job Application Agent automates the tedious part of job hunting. It continuously searches job boards and company career pages, filters listings against your eligibility criteria using an AI agent, and emails you a curated shortlist — so you spend your time applying, not searching.",
-    platforms: ["web", "android", "ios"],
-    tech: [
-      "Python",
-      "Web Scraper",
-      "AWS Lambda",
-      "SQLite",
-      "AI Agent",
-      "APIs",
-      "Next.js",
-      "Kotlin",
-      "Swift",
+      "Threat Intelligence Log Analyzer generates simulated enterprise authentication and network event logs with attack patterns deliberately injected — brute-force attempts, privilege escalation, lateral movement, and after-hours access. Four SQL detection rules (using GROUP BY, HAVING, and aggregation) run against the log data, persist structured findings to a SQLite database, and produce a severity-ranked threat report covering total findings, severity distribution, top flagged users, and critical alerts.",
+    platforms: ["cli"],
+    tech: ["Python", "SQL", "SQLite", "Threat Detection", "Log Analysis"],
+    status: "Complete",
+    links: [
+      {
+        label: "View on GitHub",
+        url: "https://github.com/danielsinensky/threat-log-analyzer",
+      },
     ],
-    status: "In development",
   },
 ];
 
