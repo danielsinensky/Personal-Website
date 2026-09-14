@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import { projects } from "@/content/projects";
+import { getAllProjects } from "@/lib/projects";
+import { getAllClientWork } from "@/lib/client-work";
+import { formatDateRange } from "@/lib/dates";
 import { socialLinks } from "@/content/social-links";
 import PrintButton from "./PrintButton";
 
@@ -50,6 +52,9 @@ const SOFTWARE_ENGINEERING_SKILLS = [
 ];
 
 export default function CVPage() {
+  const projects = getAllProjects();
+  const clientWork = getAllClientWork();
+
   return (
     <Container className="py-16">
       <div className="flex items-start justify-between gap-4">
@@ -99,7 +104,9 @@ export default function CVPage() {
             <div key={project.slug} className="border-b border-border py-6 first:pt-0">
               <div className="flex items-baseline justify-between gap-4">
                 <h3 className="font-medium">{project.title}</h3>
-                <span className="text-xs text-muted">{project.status}</span>
+                <span className="text-xs text-muted">
+                  {formatDateRange(project.startDate, project.endDate)}
+                </span>
               </div>
               <p className="mt-1 max-w-2xl text-sm text-muted">
                 {project.description}
@@ -111,6 +118,32 @@ export default function CVPage() {
           ))}
         </div>
       </section>
+
+      {clientWork.length > 0 && (
+        <section className="mt-10 border-t border-border pt-6">
+          <h2 className="text-sm text-muted">Client Work</h2>
+          <div className="mt-3 flex flex-col">
+            {clientWork.map((entry) => (
+              <div key={entry.slug} className="border-b border-border py-6 first:pt-0">
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="font-medium">
+                    {entry.title} for {entry.client}
+                  </h3>
+                  <span className="text-xs text-muted">
+                    {formatDateRange(entry.startDate, entry.endDate)}
+                  </span>
+                </div>
+                <p className="mt-1 max-w-2xl text-sm text-muted">
+                  {entry.description}
+                </p>
+                <p className="mt-2 text-xs text-muted">
+                  {entry.tech.join(" / ")}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </Container>
   );
 }

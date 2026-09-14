@@ -1,0 +1,16 @@
+{
+  "slug": "av-event-systems",
+  "title": "AV & Hybrid Event Systems",
+  "summary": "Hands-on audio/visual setup and hybrid event production, from a home test environment to running live speaker events.",
+  "description": "A hybrid A/V test environment built with Zoom and OBS to practice multi-source stream routing and audio mixing, using the same technical stack as production hybrid event support. That experience carried directly into producing and running in-person cybersecurity workshops and speaker events as Vice President of ISACA NY Metro Chapter's Yeshiva University student group, handling A/V setup and teardown, projector and display systems, livestream support, and event troubleshooting for 5+ events a semester.",
+  "platforms": [],
+  "tech": [
+    "Zoom",
+    "OBS",
+    "Audio Mixing",
+    "Livestream Support",
+    "Projectors & Display Systems"
+  ],
+  "startDate": "2025-08-01",
+  "endDate": "2026-06-30"
+}

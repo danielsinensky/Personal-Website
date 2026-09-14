@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ComingSoon from "@/components/ComingSoon";
+import ClientWorkCard from "@/components/ClientWorkCard";
+import { getAllClientWork } from "@/lib/client-work";
 
 export const metadata: Metadata = {
   title: "Client Work — Daniel Sinensky",
 };
 
 export default function ClientWorkPage() {
+  const clientWork = getAllClientWork();
+
   return (
     <Container className="py-16">
       <h1 className="text-2xl font-medium">Client Work</h1>
@@ -15,10 +19,18 @@ export default function ClientWorkPage() {
       </p>
 
       <div className="mt-8">
-        <ComingSoon
-          title="Case studies coming soon"
-          description="Client project write-ups are on the way. Check back soon."
-        />
+        {clientWork.length > 0 ? (
+          <div className="flex flex-col">
+            {clientWork.map((entry) => (
+              <ClientWorkCard key={entry.slug} entry={entry} />
+            ))}
+          </div>
+        ) : (
+          <ComingSoon
+            title="Case studies coming soon"
+            description="Client project write-ups are on the way. Check back soon."
+          />
+        )}
       </div>
     </Container>
   );
