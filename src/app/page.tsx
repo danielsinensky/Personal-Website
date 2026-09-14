@@ -2,12 +2,13 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import ProjectCard from "@/components/ProjectCard";
 import EmailSignupForm from "@/components/EmailSignupForm";
-import { projects } from "@/content/projects";
+import { getAllProjects } from "@/lib/projects";
 import { getAllPosts } from "@/lib/blog";
 import { youtubeChannelUrl } from "@/content/videos";
 
 export default function Home() {
   const latestPost = getAllPosts()[0];
+  const projects = getAllProjects();
 
   return (
     <Container className="flex flex-col gap-20 py-16">

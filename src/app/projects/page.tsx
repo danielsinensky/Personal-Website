@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/content/projects";
+import { getAllProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Projects — Daniel Sinensky",
 };
 
 export default function ProjectsPage() {
+  const projects = getAllProjects();
+
   return (
     <Container className="py-16">
       <h1 className="text-2xl font-medium">Projects</h1>

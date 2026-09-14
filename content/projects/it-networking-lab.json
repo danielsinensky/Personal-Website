@@ -1,0 +1,15 @@
+{
+  "slug": "it-networking-lab",
+  "title": "IT & Network Infrastructure Lab",
+  "summary": "A VirtualBox home lab on Windows 11 and Ubuntu for practicing enterprise network administration and IT support end-to-end.",
+  "description": "A VirtualBox home lab running Windows 11 and Ubuntu VMs, built to practice enterprise network administration and IT support end-to-end. On the infrastructure side: VLAN segmentation, firewall rule configuration, and inter-VLAN routing to simulate production network architecture, plus access control lists, endpoint hardening, and backup integrity verification for simulated NAS storage. On the support side: a Microsoft 365 developer tenant configured for account provisioning, conditional access/MFA policies, and SharePoint administration, with the full change and ticket lifecycle documented in a ServiceNow developer instance.",
+  "platforms": ["Windows 11", "Ubuntu"],
+  "tech": [
+    "VirtualBox",
+    "VLANs & Firewalls",
+    "Microsoft 365",
+    "SharePoint",
+    "ServiceNow"
+  ],
+  "startDate": "2026-01-01"
+}

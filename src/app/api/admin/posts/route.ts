@@ -1,17 +1,6 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
-
-const REPO_OWNER = "danielsinensky";
-const REPO_NAME = "Personal-Website";
-const GITHUB_API = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents`;
-
-function slugify(title: string) {
-  return title
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
+import { commitFile, repoFileExists, slugify } from "@/lib/github-commit";
 
 function buildFrontmatter(title: string, date: string, excerpt: string) {
   return [
@@ -64,13 +53,7 @@ export async function POST(request: Request) {
 
   const path = `content/blog/${slug}.mdx`;
 
-  const existing = await fetch(`${GITHUB_API}/${path}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/vnd.github+json",
-    },
-  });
-  if (existing.status === 200) {
+  if (await repoFileExists(path, token)) {
     return NextResponse.json(
       { error: `A post already exists at ${path}. Use a different title.` },
       { status: 409 },
@@ -79,24 +62,16 @@ export async function POST(request: Request) {
 
   const fileContent = buildFrontmatter(title, date, excerpt) + "\n" + body + "\n";
 
-  const commitResponse = await fetch(`${GITHUB_API}/${path}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/vnd.github+json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      message: `Add blog post: ${title}`,
-      content: Buffer.from(fileContent, "utf-8").toString("base64"),
-      branch: "main",
-    }),
+  const result = await commitFile({
+    path,
+    content: fileContent,
+    message: `Add blog post: ${title}`,
+    token,
   });
 
-  if (!commitResponse.ok) {
-    const details = await commitResponse.text();
+  if (!result.ok) {
     return NextResponse.json(
-      { error: `GitHub commit failed (${commitResponse.status}): ${details}` },
+      { error: `GitHub commit failed (${result.status}): ${result.details}` },
       { status: 502 },
     );
   }

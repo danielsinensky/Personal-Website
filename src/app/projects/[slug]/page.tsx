@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import PlatformBadge from "@/components/PlatformBadge";
 import TechTag from "@/components/TechTag";
-import { getProjectBySlug, projects } from "@/content/projects";
+import { getAllProjects, getProjectBySlug } from "@/lib/projects";
+import { formatDateRange } from "@/lib/dates";
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return getAllProjects().map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
@@ -30,7 +31,9 @@ export default async function ProjectPage({
 
   return (
     <Container className="py-16">
-      <p className="text-xs text-muted">{project.status}</p>
+      <p className="text-xs text-muted">
+        {formatDateRange(project.startDate, project.endDate)}
+      </p>
       <h1 className="mt-1 text-2xl font-medium">{project.title}</h1>
 
       <div className="mt-4 flex flex-wrap gap-2">

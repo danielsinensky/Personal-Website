@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import { auth, signIn, signOut } from "@/auth";
-import NewPostForm from "./NewPostForm";
+import AdminCreateSwitcher from "./AdminCreateSwitcher";
 
 export const metadata: Metadata = {
   title: "Admin — Daniel Sinensky",
@@ -16,7 +16,7 @@ export default async function AdminPage() {
         <h1 className="text-2xl font-medium">Admin</h1>
         <p className="mt-2 max-w-md text-sm text-muted">
           Sign in with the site owner&apos;s GitHub account to publish a new
-          blog post.
+          blog post, project, or client work entry.
         </p>
         <form
           className="mt-6"
@@ -39,7 +39,7 @@ export default async function AdminPage() {
   return (
     <Container className="py-16">
       <div className="flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-medium">New Post</h1>
+        <h1 className="text-2xl font-medium">Admin</h1>
         <form
           action={async () => {
             "use server";
@@ -51,7 +51,9 @@ export default async function AdminPage() {
           </button>
         </form>
       </div>
-      <NewPostForm />
+      <div className="mt-8">
+        <AdminCreateSwitcher />
+      </div>
     </Container>
   );
 }

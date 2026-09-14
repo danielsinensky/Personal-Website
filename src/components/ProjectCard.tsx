@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { Project } from "@/content/projects";
+import type { Project } from "@/lib/projects";
+import { formatDateRange } from "@/lib/dates";
 import PlatformBadge from "@/components/PlatformBadge";
 import TechTag from "@/components/TechTag";
 
@@ -13,7 +14,9 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-lg font-medium group-hover:underline">
           {project.title}
         </h3>
-        <span className="shrink-0 text-xs text-muted">{project.status}</span>
+        <span className="shrink-0 text-xs text-muted">
+          {formatDateRange(project.startDate, project.endDate)}
+        </span>
       </div>
       <p className="mt-2 text-sm text-muted">{project.summary}</p>
       <div className="mt-4 flex flex-wrap gap-2">
