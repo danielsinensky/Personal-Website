@@ -17,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-  return { title: project ? `${project.title} — Daniel Sinensky` : "Project" };
+  return { title: project ? `${project.title} – Daniel Sinensky` : "Project" };
 }
 
 export default async function ProjectPage({

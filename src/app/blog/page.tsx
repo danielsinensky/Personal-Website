@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Daniel Sinensky",
+  title: "Blog – Daniel Sinensky",
 };
 
 export default function BlogIndexPage() {

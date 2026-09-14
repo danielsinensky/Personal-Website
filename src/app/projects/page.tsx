@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { getAllProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Projects — Daniel Sinensky",
+  title: "Projects – Daniel Sinensky",
 };
 
 export default function ProjectsPage() {

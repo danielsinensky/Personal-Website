@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import { socialLinks } from "@/content/social-links";
 
 export const metadata: Metadata = {
-  title: "About — Daniel Sinensky",
+  title: "About – Daniel Sinensky",
 };
 
 export default function AboutPage() {
