@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-3xl font-medium">Daniel Sinensky</h1>
         <p className="mt-4 max-w-xl text-muted">
           A cybersecurity professional with hands-on GRC, risk, and
-          incident-response experience — and an outreach track record
+          incident-response experience, plus an outreach track record
           that&apos;s booked CISOs as speakers and built a 100+ client
           business from scratch. I also build the security tooling and
           software behind that work. Below is what I&apos;m currently
