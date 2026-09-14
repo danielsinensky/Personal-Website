@@ -46,7 +46,7 @@ export default function NewPostForm() {
       <div className="mt-8 max-w-xl text-sm text-muted">
         <p>
           Post committed as <code>{result.slug}.mdx</code>. Vercel is
-          redeploying now — it&apos;ll be live at{" "}
+          redeploying now, and it&apos;ll be live at{" "}
           <code>/blog/{result.slug}</code> in about a minute.
         </p>
         <button

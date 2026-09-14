@@ -22,6 +22,23 @@ const CYBERSECURITY_SKILLS = [
   "Risk Analysis",
   "GRC (NIST, SOC 2, ISO 27001, HIPAA)",
   "Splunk Log Analysis",
+  "Threat Detection",
+];
+
+const IT_SYSTEMS_SKILLS = [
+  "VirtualBox",
+  "VLANs & Firewalls",
+  "Microsoft 365",
+  "SharePoint",
+  "ServiceNow",
+];
+
+const AV_EVENT_SKILLS = [
+  "Zoom",
+  "OBS",
+  "Audio Mixing",
+  "Livestream Support",
+  "Projectors & Display Systems",
 ];
 
 const SOFTWARE_ENGINEERING_SKILLS = [
@@ -59,13 +76,19 @@ export default function CVPage() {
       <section className="mt-10 border-t border-border pt-6">
         <h2 className="text-sm text-muted">Skills</h2>
         <p className="mt-3 text-sm leading-relaxed">
-          Certifications — {CERTIFICATIONS.join(" / ")}
+          Certifications: {CERTIFICATIONS.join(" / ")}
         </p>
         <p className="mt-1 text-sm leading-relaxed">
-          Cybersecurity — {CYBERSECURITY_SKILLS.join(" / ")}
+          Cybersecurity: {CYBERSECURITY_SKILLS.join(" / ")}
         </p>
         <p className="mt-1 text-sm leading-relaxed">
-          Software Engineering — {SOFTWARE_ENGINEERING_SKILLS.join(" / ")}
+          IT & Systems: {IT_SYSTEMS_SKILLS.join(" / ")}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed">
+          AV & Event Production: {AV_EVENT_SKILLS.join(" / ")}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed">
+          Software Engineering: {SOFTWARE_ENGINEERING_SKILLS.join(" / ")}
         </p>
       </section>
 

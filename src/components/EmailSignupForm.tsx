@@ -20,7 +20,7 @@ export default function EmailSignupForm({
     return (
       <p className={`text-sm text-muted ${compact ? "" : "max-w-sm"}`}>
         Thanks! The mailing list isn&apos;t live yet, but I&apos;ve noted you
-        want in — check back soon.
+        want in. Check back soon.
       </p>
     );
   }
