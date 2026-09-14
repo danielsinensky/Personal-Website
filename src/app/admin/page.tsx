@@ -4,7 +4,7 @@ import { auth, signIn, signOut } from "@/auth";
 import AdminCreateSwitcher from "./AdminCreateSwitcher";
 
 export const metadata: Metadata = {
-  title: "Admin — Daniel Sinensky",
+  title: "Admin – Daniel Sinensky",
 };
 
 export default async function AdminPage() {

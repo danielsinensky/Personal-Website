@@ -17,7 +17,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const entry = getClientWorkBySlug(slug);
-  return { title: entry ? `${entry.title} — Daniel Sinensky` : "Client Work" };
+  return { title: entry ? `${entry.title} – Daniel Sinensky` : "Client Work" };
 }
 
 export default async function ClientWorkEntryPage({

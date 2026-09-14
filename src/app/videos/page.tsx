@@ -4,7 +4,7 @@ import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { videos, youtubeChannelUrl } from "@/content/videos";
 
 export const metadata: Metadata = {
-  title: "Videos — Daniel Sinensky",
+  title: "Videos – Daniel Sinensky",
 };
 
 export default function VideosPage() {

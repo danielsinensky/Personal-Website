@@ -7,7 +7,7 @@ import { socialLinks } from "@/content/social-links";
 import PrintButton from "./PrintButton";
 
 export const metadata: Metadata = {
-  title: "CV — Daniel Sinensky",
+  title: "CV – Daniel Sinensky",
 };
 
 const CERTIFICATIONS = [

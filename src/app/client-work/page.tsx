@@ -5,7 +5,7 @@ import ClientWorkCard from "@/components/ClientWorkCard";
 import { getAllClientWork } from "@/lib/client-work";
 
 export const metadata: Metadata = {
-  title: "Client Work — Daniel Sinensky",
+  title: "Client Work – Daniel Sinensky",
 };
 
 export default function ClientWorkPage() {
