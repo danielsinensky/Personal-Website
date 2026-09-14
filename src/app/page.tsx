@@ -15,12 +15,12 @@ export default function Home() {
       <section>
         <h1 className="text-3xl font-medium">Daniel Sinensky</h1>
         <p className="mt-4 max-w-xl text-muted">
-          A cybersecurity professional with hands-on GRC, risk, and
-          incident-response experience, plus an outreach track record
-          that&apos;s booked CISOs as speakers and built a 100+ client
-          business from scratch. I also build the security tooling and
-          software behind that work. Below is what I&apos;m currently
-          building, recent writing, and where else to find me.
+          A cybersecurity professional who pairs hands-on security work
+          with a track record of turning outreach into results. I also
+          build the software and tooling I talk about, so when I talk
+          security, I&apos;m not reading from a script. Below is what
+          I&apos;m currently building, recent writing, and where else to
+          find me.
         </p>
       </section>
 
