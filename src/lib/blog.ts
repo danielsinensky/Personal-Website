@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { toISODate } from "@/lib/dates";
+import { normalizeTags } from "@/lib/tags";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -9,11 +11,25 @@ export interface BlogPostMeta {
   title: string;
   date: string;
   excerpt: string;
+  tags: string[];
 }
 
 export interface BlogPost {
   meta: BlogPostMeta;
   content: string;
+}
+
+export function postMetaFromFrontmatter(
+  slug: string,
+  data: Record<string, unknown>,
+): BlogPostMeta {
+  return {
+    slug,
+    title: String(data.title ?? slug),
+    date: toISODate(data.date),
+    excerpt: String(data.excerpt ?? ""),
+    tags: normalizeTags(data.tags),
+  };
 }
 
 export function getAllPosts(): BlogPostMeta[] {
@@ -25,14 +41,9 @@ export function getAllPosts(): BlogPostMeta[] {
     .map((file) => {
       const slug = file.replace(/\.mdx$/, "");
       const { data } = matter(fs.readFileSync(path.join(BLOG_DIR, file), "utf8"));
-      return {
-        slug,
-        title: data.title as string,
-        date: data.date as string,
-        excerpt: data.excerpt as string,
-      };
+      return postMetaFromFrontmatter(slug, data);
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
@@ -40,13 +51,5 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
   if (!fs.existsSync(filePath)) return undefined;
 
   const { data, content } = matter(fs.readFileSync(filePath, "utf8"));
-  return {
-    meta: {
-      slug,
-      title: data.title as string,
-      date: data.date as string,
-      excerpt: data.excerpt as string,
-    },
-    content,
-  };
+  return { meta: postMetaFromFrontmatter(slug, data), content };
 }
